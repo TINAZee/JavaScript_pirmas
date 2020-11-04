@@ -1,6 +1,6 @@
 console.log("Hello World !!!");
 
-//kvadratines lygties programa
+//kvadratines lygties paskaiciavimo  programa
 
 var a = 0;
 var b = 0;
