@@ -1,7 +1,20 @@
-suma = 0;
-sk = 1;
-while (sk <= 1000) {
-    suma += sk++
-}
+//suma tik lyginiu skaiciu 
+var i = 0;
+sum1 = 0;
 
-console.log(suma);
+while (i <= 1000) {
+    sum1 += i;
+    i += 2;
+}
+console.log(sum1);
+//kitas variantas 
+
+var i = 0;
+sum = 0;
+while (i <= 1000) {
+    if (i % 2 == 0) {
+        sum += i;
+    }
+    i++
+}
+console.log(sum);
