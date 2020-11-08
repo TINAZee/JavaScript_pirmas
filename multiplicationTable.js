@@ -1,10 +1,10 @@
 
 function space(value){
-  let buff = '';
+  let space = '';
   let pad = 4 - value;
     while( pad-- > 0 )
-            buff += ' ';            
-  return buff;
+        space += ' ';            
+  return space;
 }
 
 let result = ' x   ';
@@ -25,6 +25,7 @@ for (let i = from-1; i < to+1; i++) {
         result += space((i*j+'').length ) + i*j;
         }
     }
+    // \n is new line 
     result += '\n'
 }
 
