@@ -1,4 +1,3 @@
-let result = ' x   ';
 
 function space(value){
   let buff = '';
@@ -8,6 +7,7 @@ function space(value){
   return buff;
 }
 
+let result = ' x   ';
 let from = 1;
 let to = 10;
 
