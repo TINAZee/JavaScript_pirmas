@@ -1,4 +1,5 @@
 
+//version 1
 function space(value){
   let space = '';
   let pad = 4 - value;
@@ -30,3 +31,16 @@ for (let i = from-1; i < to+1; i++) {
 }
 
 console.log(result);
+
+//version 2
+
+let from1 = 1;
+let to1 = 10;
+
+for (let i = from; i < to; i++) {
+    str = i + "\t"
+    for (let j = from; j < to; j++) {
+        str += (i*j)+"\t"
+    }
+console.log(str);
+  }
