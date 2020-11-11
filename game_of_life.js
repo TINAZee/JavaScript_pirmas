@@ -1,35 +1,27 @@
 
 
-let field = [
-[".", ".", ".", ".", "X"],
-[".", ".", "X", ".", "."],
-[".", ".", "X", "X", "."],
-[".", ".", "X", ".", "."],
-[".", ".", ".", ".", "."]
-];
+// let field = [
+// [".", ".", ".", ".", "."],
+// [".", ".", "X", ".", "."],
+// [".", ".", "X", ".", "."],
+// [".", ".", "X", ".", "."],
+// [".", ".", ".", ".", "."]
+// ];
 
-let field2 = [
-    [".", "X", ".", ".", "."],
-    ["X", "X", ".", ".", "."],
-    [".", ".", "X", "X", "X"],
-    [".", ".", ".", "X", "X"],
-    [".", ".", ".", "X", "."]
-    ];
+const size = 10;
+let field = [];
+for (let i = 0; i < size; i++) {
+    const line = [];
 
-// const size = 5;
-// let field = [];
-// for (let i = 0; i < size; i++) {
-//     const line = [];
-
-//     for (let j = 0; j < size; j++) {
-//         if (Math.random() < 0.25) {
-//             line.push("X");
-//         } else {
-//             line.push(".");
-//         } 
-//     }
-//     field.push(line);
-// }
+    for (let j = 0; j < size; j++) {
+        if (Math.random() < 0.25) {
+            line.push("X");
+        } else {
+            line.push(".");
+        } 
+    }
+    field.push(line);
+}
 
 for (let i = 0; i < field.length; i++) {
     let line = i + ": ";
@@ -41,8 +33,24 @@ for (let i = 0; i < field.length; i++) {
 console.log("-----------------------");
 
 let NeighborCount = 0;
-let outOfBorder = 0
+
+const NeighborCountFieldSize = 10;
 let NeighborCountField = [];
+for (let i = 0; i < NeighborCountFieldSize; i++) {
+    const NeighborCountFieldSizeLine = [];
+
+    for (let j = 0; j < size; j++) {
+        if (Math.random() < 0.25) {
+            NeighborCountFieldSizeLine.push("X");
+        } else {
+            NeighborCountFieldSizeLine.push(".");
+        } 
+    }
+    NeighborCountField.push(NeighborCountFieldSizeLine);
+}
+
+let p = 0;
+let go = true;
 
 for (let p = 0; p <= 50; p++){
 
@@ -62,14 +70,14 @@ for (let p = 0; p <= 50; p++){
                 
                 }
             }
-            field2[i][j] = NeighborCount;
+            NeighborCountField[i][j] = NeighborCount;
             NeighborCount = 0;
         }
     }
 
     for (let i = 0; i < field.length; i++) {
         for (let j = 0; j < field[i].length; j++) {
-            let neighbors = field2[i][j];
+            let neighbors = NeighborCountField[i][j];
 
             if (field[i][j] == "X") {
                 
