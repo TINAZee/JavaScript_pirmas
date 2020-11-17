@@ -34,9 +34,9 @@ for (let i = 0; i < size; i++) {
     }
     NeighborCountField.push(NeighborCountFieldSizeLine);
 }
-
+const history = [];
 let TEST = [];
-let field2 = field;
+;
 let similarity = 0;
 let printCount = 0;
 let maxIterations = 50;
@@ -64,6 +64,7 @@ for (let p = 0; p <= maxIterations; p++){
         
         //put value in to next 2d array
         let TESTsizeArray = [];
+        const field2 = [];
         for (let i = 0; i < field2.length; i++) {
             let TESTsizeLine =[];
             for (let j = 0; j < field2[i].length; j++) {
@@ -107,6 +108,8 @@ for (let p = 0; p <= maxIterations; p++){
         similarity = 0;
         //prints 2d array
         printCount++ 
+
+        field = field2;
         for (let i = 0; i < field2.length; i++) {
             let line = i + ": ";
             for (let j = 0; j < field2[i].length; j++) {
